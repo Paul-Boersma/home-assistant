@@ -1,0 +1,32 @@
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+spotify:
+  client_id: cddaab7c9d4b42b9a94fc2bd44902b7c
+  client_secret: !secret spotify_client_secret
+
+sensor:
+  - platform: xbox_live
+    api_key: !secret xbox_live_api_key
+    xuid:
+      # PB The Punisher
+      - 2535466218647495
+      # StK FuFu I
+      - 000901F4E60C8A7A
+      # Xzhyro
+      - 000901FC25C64135
+
+mqtt:
+  broker: 192.168.178.185
+  port: 1883
+  client_id: home-assistant
+  username: username
+  password: !secret mqtt_password
